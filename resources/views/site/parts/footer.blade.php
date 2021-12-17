@@ -70,10 +70,10 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <p>Copyright &copy; 2020 Financial Business Co., Ltd.
+              <p>{{$settings->copyright}}
 
-              - Design: <a rel="nofollow noopener" href="https://templatemo.com" target="_blank">TemplateMo</a><br>
-              Distributed By: <a rel="nofollow noopener" href="https://themewagon.com" target="_blank">ThemeWagon</a>
+              <br>
+              Distributed By: <a rel="nofollow noopener" href="https://themewagon.com" target="_blank">{{$settings->author}}</a>
             </p>
             </div>
           </div>

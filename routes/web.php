@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
-
+Route::get('/',[\App\Http\Controllers\Site\HomeController::class,'index'])->name('index');
 
 Route::group(['prefix' => '/admin', 'as' => 'admin-panel.'],function () {
 
