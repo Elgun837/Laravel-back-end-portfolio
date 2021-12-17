@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class SlidersController extends Controller
 {
     public function index(){
-        $slide = Slider::find(1);
-        return view('dashboard.sliders.main-slider', compact('slide'));
+        $slides = Slider::all();
+        return view('dashboard.sliders.main-slider', compact('slides'));
     }
+    
 }

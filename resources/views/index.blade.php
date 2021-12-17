@@ -1,7 +1,8 @@
-
 @extends('site.layouts.layouts')
 
 @section('page-content')
+
+
     <div class="main-banner header-text" id="top">
         <div class="Modern-Slider">
           <!-- Item -->
@@ -11,7 +12,7 @@
                   <h6>we are ready to help you</h6>
                   <h4>Financial Analysis<br>&amp; Consulting</h4>
                   <p>This finance HTML template is 100% free of charge provided by TemplateMo for everyone. This is a multiple-page version with different HTML pages. <a href="one-page.html">One-page version</a> is available as of 2021 February.</p>
-                  <a href="contact.html" class="filled-button">contact us</a>
+                  <a href="#" class="filled-button">contact us</a>
                 </div>
             </div>
           </div>
