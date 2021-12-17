@@ -18,26 +18,22 @@
 
 
                     <div class="row">
-                        <div class="col-md-12">Services 1
+                        <div class="col-md-12">
                             <div class="form-group">
-
-                                <canvas id= "canv1" ></canvas>
-
-                                <p>
-                                    Logo (125x42)
-                                    <input class="form-control-file border" type="file" multiple="false" name="logo" accept="image/*" id=finput onchange="upload()">
+                                Tel number <span style="color: red">*</span>
+                                <input type="number" name="number" value="" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                Title <span style="color: red">*</span>
-                                <input type="text" name="subtitle" value="" class="form-control" required>
+                                Email <span style="color: red">*</span>
+                                <input type="mail" name="email" value="" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                Description <span style="color: red">*</span>
-                                <input type="text" name="description" value="" class="form-control" required>
+                                Location <span style="color: red">*</span>
+                                <input type="text" name="location" value="" class="form-control" required>
                             </div>
                         </div>
 
