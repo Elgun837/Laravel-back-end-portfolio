@@ -20,6 +20,7 @@ class CreateAboutsTable extends Migration
             $table->string('about_subtitle');
             $table->string('about_image');
             $table->string('about_description');
+            $table->string('about_background_image');
             $table->timestamps();
         });
     }
