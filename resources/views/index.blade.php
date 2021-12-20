@@ -53,7 +53,7 @@
             <span>Mauris ut dapibus velit cras interdum nisl ac urna tempor mollis.</span>
           </div>
           <div class="col-md-4">
-            <a href="contact.html" class="border-button">Contact Us</a>
+            <a href="#" class="border-button">Contact Us</a>
           </div>
         </div>
       </div>
@@ -70,7 +70,7 @@
           </div>
           <div class="col-md-4">
             <div class="service-item">
-              <img src="" alt="{{ asset('front/assets/images/service_01.jpg') }}">
+              <img src="{{ asset('front/assets/images/service_01.jpg') }}" alt="">
               <div class="down-content">
                 <h4>Digital Currency</h4>
                 <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
@@ -80,7 +80,7 @@
           </div>
           <div class="col-md-4">
             <div class="service-item">
-              <img src="" alt="{{ asset('front/assets/images/service_02.jpg')}}">
+              <img src="{{ asset('front/assets/images/service_02.jpg')}}" alt="">
               <div class="down-content">
                 <h4>Market Analysis</h4>
                 <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
@@ -90,7 +90,7 @@
           </div>
           <div class="col-md-4">
             <div class="service-item">
-              <img src="" alt="{{ asset('front/assets/images/service_03.jpg')}}">
+              <img src="{{ asset('front/assets/images/service_03.jpg')}}" alt="">
               <div class="down-content">
                 <h4>Historical Data</h4>
                 <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
@@ -154,7 +154,7 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="left-image">
-                    <img src="" alt="{{ asset('front/assets/images/more-info.jpg')}}">
+                    <img src="{{ asset('front/assets/images/more-info.jpg')}}" alt="">
                   </div>
                 </div>
                 <div class="col-md-6 align-self-center">
@@ -279,23 +279,23 @@
             <div class="owl-partners owl-carousel">
 
               <div class="partner-item">
-                <img src="" title="1" alt="{{ asset('front/assets/images/client-01.png')}}">
+                <img src="{{ asset('front/assets/images/client-01.png')}}" title="1" alt="">
               </div>
 
               <div class="partner-item">
-                <img src="" title="2" alt="{{ asset('front/assets/images/client-01.png')}}">
+                <img src="{{ asset('front/assets/images/client-01.png')}}" title="2" alt="">
               </div>
 
               <div class="partner-item">
-                <img src="" title="3" alt="{{ asset('front/assets/images/client-01.png')}}">
+                <img src="{{ asset('front/assets/images/client-01.png')}}" title="3" alt="">
               </div>
 
               <div class="partner-item">
-                <img src="" title="4" alt="{{ asset('front/assets/images/client-01.png')}}">
+                <img src="{{ asset('front/assets/images/client-01.png')}}" title="4" alt="">
               </div>
 
               <div class="partner-item">
-                <img src="" title="5" alt="{{ asset('front/assets/images/client-01.png')}}">
+                <img src="{{ asset('front/assets/images/client-01.png')}}" title="5" alt="">
               </div>
 
             </div>

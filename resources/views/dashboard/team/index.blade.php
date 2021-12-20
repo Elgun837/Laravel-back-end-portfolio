@@ -19,7 +19,7 @@
                     @csrf
 
                     <div class="row">
-                        <div class="col-md-12">Services 1
+                        <div class="col-md-12">Member
                             <div class="form-group">
 
                                 <canvas id= "canv1" ></canvas>

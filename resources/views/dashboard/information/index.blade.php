@@ -18,7 +18,7 @@
 
 
                     <div class="row">
-                        <div class="col-md-12">Services 1
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <input class="form-control-file border" type="file" multiple="false" name="logo" accept="image/*" id=finput onchange="upload()">
                             </div>

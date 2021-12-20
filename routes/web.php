@@ -10,10 +10,14 @@ use App\Http\Controllers\Admin\TeamsController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/',[\App\Http\Controllers\Site\HomeController::class,'index'])->name('index');
+
+Route::get('/',[\App\Http\Controllers\Site\HomeController::class,'index'])->name('homepage');
+
+Route::get('/about-us', [\App\Http\Controllers\Site\AboutController::class,'index'])->name('about-us');
+
+Route::get('/contact-us', [\App\Http\Controllers\Site\ContactController::class,'index'])->name('contact-us');
+
+Route::get('/services', [\App\Http\Controllers\Site\ServiceController::class,'index'])->name('services');
 
 Route::group(['prefix' => '/admin', 'as' => 'admin-panel.'],function () {
 
