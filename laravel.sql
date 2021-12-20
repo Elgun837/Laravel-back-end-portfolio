@@ -2,10 +2,10 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Anamakine: 127.0.0.1
--- Üretim Zamanı: 13 Ara 2021, 21:34:40
--- Sunucu sürümü: 10.4.22-MariaDB
--- PHP Sürümü: 8.0.13
+-- Host: 127.0.0.1
+-- Generation Time: Dec 20, 2021 at 06:51 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,46 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Veritabanı: `laravel`
+-- Database: `laravel`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `failed_jobs`
+-- Table structure for table `abouts`
+--
+
+CREATE TABLE `abouts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `page_subtitle` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `about_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `about_subtitle` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `about_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `about_description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `about_background_image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contacts`
+--
+
+CREATE TABLE `contacts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `tel_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -40,7 +73,30 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `migrations`
+-- Table structure for table `information`
+--
+
+CREATE TABLE `information` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description_1` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description_2` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `info_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `information`
+--
+
+INSERT INTO `information` (`id`, `title`, `description_1`, `description_2`, `info_image`, `created_at`, `updated_at`) VALUES
+(1, 'Information title', 'Info desc 1', 'Info desc 2', NULL, '2021-12-17 07:14:20', '2021-12-17 07:14:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -50,20 +106,26 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2021_12_10_101917_create_settings_table', 1);
+(23, '2014_10_12_000000_create_users_table', 1),
+(24, '2014_10_12_100000_create_password_resets_table', 1),
+(25, '2019_08_19_000000_create_failed_jobs_table', 1),
+(26, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(27, '2021_12_10_101917_create_settings_table', 1),
+(28, '2021_12_16_112318_create_sliders_table', 1),
+(29, '2021_12_16_112337_create_information_table', 1),
+(30, '2021_12_16_112404_create_teams_table', 1),
+(31, '2021_12_16_112432_create_services_table', 1),
+(32, '2021_12_17_100928_create_abouts_table', 1),
+(33, '2021_12_17_102556_create_contacts_table', 1);
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -75,7 +137,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `personal_access_tokens`
+-- Table structure for table `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -93,7 +155,32 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `settings`
+-- Table structure for table `services`
+--
+
+CREATE TABLE `services` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `service_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `service_description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `service_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `services`
+--
+
+INSERT INTO `services` (`id`, `service_title`, `service_description`, `service_image`, `created_at`, `updated_at`) VALUES
+(1, 'service title', 'Service  description', NULL, '2021-12-17 07:14:20', '2021-12-17 07:14:20'),
+(2, 'service title', 'Service  description', NULL, '2021-12-17 07:14:20', '2021-12-17 07:14:20'),
+(3, 'service title', 'Service  description', NULL, '2021-12-17 07:14:20', '2021-12-17 07:14:20'),
+(4, 'service title', 'Service  description', NULL, '2021-12-17 07:14:20', '2021-12-17 07:14:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `settings`
 --
 
 CREATE TABLE `settings` (
@@ -101,6 +188,7 @@ CREATE TABLE `settings` (
   `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `subtitle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `logo` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `favicon` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `keywords` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `author` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -110,16 +198,68 @@ CREATE TABLE `settings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `settings`
+-- Dumping data for table `settings`
 --
 
-INSERT INTO `settings` (`id`, `title`, `subtitle`, `logo`, `description`, `keywords`, `author`, `copyright`, `created_at`, `updated_at`) VALUES
-(1, 'Gym-Fitness', 'Idman sağlamlıqdır!', NULL, NULL, NULL, NULL, NULL, '2021-12-13 14:18:58', '2021-12-13 14:18:58');
+INSERT INTO `settings` (`id`, `title`, `subtitle`, `logo`, `favicon`, `description`, `keywords`, `author`, `copyright`, `created_at`, `updated_at`) VALUES
+(1, 'Gym-Fitness', 'Idman sağlamlıqdır!', NULL, 'storage/uploads/settings/favicon1639748787.jpg', 'Bekarciliq', NULL, 'Elgun Xelilzade', '2022 Copyright All rights reserved.', '2021-12-17 07:14:20', '2021-12-17 09:46:27');
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `users`
+-- Table structure for table `sliders`
+--
+
+CREATE TABLE `sliders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subtitle` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `button` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `button_link` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slide_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `sliders`
+--
+
+INSERT INTO `sliders` (`id`, `title`, `subtitle`, `description`, `button`, `button_link`, `slide_image`, `created_at`, `updated_at`) VALUES
+(1, 'Slide title', 'Slide subtitle', 'Slide description', NULL, NULL, NULL, '2021-12-17 07:14:20', '2021-12-17 07:14:20'),
+(2, 'Slide title', 'Slide subtitle', 'Slide description', NULL, NULL, NULL, '2021-12-17 07:14:20', '2021-12-17 07:14:20'),
+(3, 'Slide title', 'Slide subtitle', 'Slide description', NULL, NULL, NULL, '2021-12-17 07:14:20', '2021-12-17 07:14:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teams`
+--
+
+CREATE TABLE `teams` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `team_member_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `team_member_duty` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `team_member_image` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `team_member_about` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `teams`
+--
+
+INSERT INTO `teams` (`id`, `team_member_name`, `team_member_duty`, `team_member_image`, `team_member_about`, `created_at`, `updated_at`) VALUES
+(1, 'Filankes', 'job', NULL, 'Lorem ipsum dolor sit', '2021-12-17 07:14:20', '2021-12-17 07:14:20'),
+(2, 'Filankes', 'job', NULL, 'Lorem ipsum dolor sit', '2021-12-17 07:14:20', '2021-12-17 07:14:20'),
+(3, 'Filankes', 'job', NULL, 'Lorem ipsum dolor sit', '2021-12-17 07:14:20', '2021-12-17 07:14:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -134,37 +274,55 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Tablo döküm verisi `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Elgun', 'elgun.xalilov@bk.ru', '2021-12-13 14:18:59', '$2y$10$imht2V1U.nrahykRmv4ue.rJ5rmpQcoUSGX2on7pNbPrzsHp7mAMu', 'DdQIk8ZQ3grXIT8DWa2m0AYhvflLYRpdJ7RW3FwfhTeJI3PrwkYpZd5SJ3eY', '2021-12-13 14:18:59', '2021-12-13 14:18:59');
+(1, 'Elgun', 'elgun.xalilov@bk.ru', '2021-12-17 07:14:20', '$2y$10$ee5vXY/3O2HxejCr8dVmmOYbipf2XYoxa6i.M6.87d7yLre.Uzyjm', 'qQRh27V6ZF', '2021-12-17 07:14:20', '2021-12-17 07:14:20');
 
 --
--- Dökümü yapılmış tablolar için indeksler
+-- Indexes for dumped tables
 --
 
 --
--- Tablo için indeksler `failed_jobs`
+-- Indexes for table `abouts`
+--
+ALTER TABLE `abouts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `contacts`
+--
+ALTER TABLE `contacts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Tablo için indeksler `migrations`
+-- Indexes for table `information`
+--
+ALTER TABLE `information`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Tablo için indeksler `personal_access_tokens`
+-- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -172,48 +330,102 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Tablo için indeksler `settings`
+-- Indexes for table `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `settings`
 --
 ALTER TABLE `settings`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `users`
+-- Indexes for table `sliders`
+--
+ALTER TABLE `sliders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `teams`
+--
+ALTER TABLE `teams`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Tablo için AUTO_INCREMENT değeri `failed_jobs`
+-- AUTO_INCREMENT for table `abouts`
+--
+ALTER TABLE `abouts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `contacts`
+--
+ALTER TABLE `contacts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `migrations`
+-- AUTO_INCREMENT for table `information`
 --
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `information`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Tablo için AUTO_INCREMENT değeri `personal_access_tokens`
+-- AUTO_INCREMENT for table `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `settings`
+-- AUTO_INCREMENT for table `services`
+--
+ALTER TABLE `services`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `settings`
 --
 ALTER TABLE `settings`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Tablo için AUTO_INCREMENT değeri `users`
+-- AUTO_INCREMENT for table `sliders`
+--
+ALTER TABLE `sliders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `teams`
+--
+ALTER TABLE `teams`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
