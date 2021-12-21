@@ -51,19 +51,25 @@
 
                                 <p>
                                     Photo
-                                    <input class="form-control-file border" type="file" multiple="false" name="logo" accept="image/*" id=finput onchange="upload()">
+                                    <input class="form-control-file border" type="file" multiple="false" name="member_photo" accept="image/*" id=finput onchange="upload()">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                Title <span style="color: red">*</span>
-                                <input type="text" name="subtitle" value="" class="form-control" required>
+                                Name <span style="color: red">*</span>
+                                <input type="text" name="member_name" value="" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                Description <span style="color: red">*</span>
-                                <input type="text" name="description" value="" class="form-control" required>
+                                Duty <span style="color: red">*</span>
+                                <input type="text" name="member_duty" value="" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                Information <span style="color: red">*</span>
+                                <input type="text" name="member_info" value="" class="form-control" required>
                             </div>
                         </div>
 
@@ -71,7 +77,6 @@
                     <hr>
                     <div class="form-group row justify-content-center">
                         <button type="submit" class="col-4 m-4 btn btn-block btn-md btn-primary">Add</button>
-                        <button type="submit" class="col-4 m-4 btn btn-block btn-md btn-danger">Delete</button>
                     </div>
                 </form>
             </div>

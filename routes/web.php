@@ -40,6 +40,7 @@ Route::group(['prefix' => '/admin', 'as' => 'admin-panel.'],function () {
         Route::get("/information",      [InformationController::class, 'index'])->name('information');
 
         Route::get("/team",             [TeamsController::class, 'index'])->name('team');
+        Route::post("/team",            [TeamsController::class, 'add'])->name('add-team');
 
         Route::get("/settings",         [SettingsController::class, 'index'])->name('settings');
         Route::post("/settings/update", [SettingsController::class, 'update'])->name('settings.update');
