@@ -8,7 +8,7 @@
     <meta name="description" content="{{$settings->description}}">
     <meta name="author" content="{{$settings->author}}">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-
+      <link rel="icon" type="image/png" href="{{$settings->favicon}}">
     <title>{{$settings->title}}</title>
     <link rel="shortcut icon" type="image/jpg" href="">
     <!-- Bootstrap core CSS -->

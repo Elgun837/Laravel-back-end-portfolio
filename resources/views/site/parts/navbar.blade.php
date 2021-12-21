@@ -7,18 +7,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item @if(Request::segment(1) =="") active  @endif">
               <a class="nav-link" href="{{ route('homepage') }}">Home
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item @if(Request::segment(1) =="about-us") active  @endif">
               <a class="nav-link" href="{{ route('about-us') }}">About Us</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item  @if(Request::segment(1) =="services") active  @endif">
               <a class="nav-link" href="{{ route('services') }}">Our Services</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item  @if(Request::segment(1) =="contact-us") active  @endif">
               <a class="nav-link" href="{{ route('contact-us') }}">Contact Us</a>
             </li>
           </ul>

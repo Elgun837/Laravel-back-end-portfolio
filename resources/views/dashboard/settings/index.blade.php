@@ -34,7 +34,9 @@
                     <div class="col-md-6">
                         <div class="form-group">
 
-                            <canvas id= "canv1" ></canvas>
+                            <div class="admin-img-box">
+                                <img src="{{ asset($settings->logo) }}"  width="125px" alt="logo">
+                            </div>
 
                             <p>
                                 Logo (125x42)
@@ -43,7 +45,9 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <canvas id= "canv2" ></canvas>
+                            <div class="admin-img-box">
+                                <img src="{{asset($settings->favicon)}}" width="125px"  alt="logo">
+                            </div>
                             <p>
                             Favicon
                             <input class="form-control-file border" type="file" multiple="false" name="favicon" accept="image/*" id=favinput onchange="upload_2()">
@@ -91,31 +95,6 @@
     </div>
 
     </div>
-<style>
-    canvas {
-        height: 100px;
-        border-style: solid;
-        border-width: 1px;
-        border-color: black;
-    }
-</style>
-<script src="https://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js">
-</script>
-<script>
-    function upload(){
-        var imgcanvas = document.getElementById("canv1");
-        var fileinput = document.getElementById("finput");
-        var image = new SimpleImage(fileinput);
-        image.drawTo(imgcanvas);
 
-    }
-    function upload_2(){
-        var imgcanvas = document.getElementById("canv2");
-        var fileinput = document.getElementById("favinput");
-        var image = new SimpleImage(fileinput);
-        image.drawTo(imgcanvas);
 
-    }
-
-</script>
 @endsection()

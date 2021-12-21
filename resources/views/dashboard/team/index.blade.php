@@ -12,7 +12,32 @@
                     class="fas fa-download fa-sm text-white-50"></i> Go back to site</a>
         </div>
 
-        <div class="card shadow mb-4">
+
+        <div class="row">
+        <div class="card shadow mb-4 col-lg-8">
+            <div class="card-body">
+            <table class="table">
+                <caption>List of member</caption>
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Photo</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">About</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td><img src="" width="100px"></td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                </tbody>
+            </table>
+            </div>
+        </div>
+        <div class="card shadow mb-4 col-lg-4">
 
             <div class="card-body">
                 <form action="" method="post" enctype="multipart/form-data">
@@ -25,7 +50,7 @@
                                 <canvas id= "canv1" ></canvas>
 
                                 <p>
-                                    Logo (125x42)
+                                    Photo
                                     <input class="form-control-file border" type="file" multiple="false" name="logo" accept="image/*" id=finput onchange="upload()">
                             </div>
                         </div>
@@ -45,14 +70,14 @@
                     </div>
                     <hr>
                     <div class="form-group row justify-content-center">
-                        <button type="submit" class="col-4 m-4 btn btn-block btn-md btn-primary">Update</button>
+                        <button type="submit" class="col-4 m-4 btn btn-block btn-md btn-primary">Add</button>
                         <button type="submit" class="col-4 m-4 btn btn-block btn-md btn-danger">Delete</button>
                     </div>
                 </form>
             </div>
         </div>
 
-
+        </div>
 
 
     </div>
