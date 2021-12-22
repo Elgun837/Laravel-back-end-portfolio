@@ -40,7 +40,7 @@
         <div class="card shadow mb-4 col-lg-4">
 
             <div class="card-body">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{ route('admin-panel.team.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="row">
@@ -51,25 +51,25 @@
 
                                 <p>
                                     Photo
-                                    <input class="form-control-file border" type="file" multiple="false" name="member_photo" accept="image/*" id=finput onchange="upload()">
+                                    <input class="form-control-file border" type="file" multiple="false" name="team_member_image" accept="image/*" id=finput onchange="upload()">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 Name <span style="color: red">*</span>
-                                <input type="text" name="member_name" value="" class="form-control" required>
+                                <input type="text" name="team_member_name" value="" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 Duty <span style="color: red">*</span>
-                                <input type="text" name="member_duty" value="" class="form-control" required>
+                                <input type="text" name="team_member_duty" value="" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 Information <span style="color: red">*</span>
-                                <input type="text" name="member_info" value="" class="form-control" required>
+                                <input type="text" name="team_member_about" value="" class="form-control" required>
                             </div>
                         </div>
 

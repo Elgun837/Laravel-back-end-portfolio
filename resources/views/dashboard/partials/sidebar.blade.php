@@ -9,7 +9,7 @@
         <div class="sidebar-brand-text mx-3"> Admin</div>
     </a>
 
-     
+
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 
@@ -67,7 +67,7 @@
     <hr class="sidebar-divider">
 
     <li class="nav-item @if(Request::segment(2) =="team") active  @endif">
-        <a class="nav-link " href="{{ route('admin-panel.team')}}">
+        <a class="nav-link " href="{{ route('admin-panel.team.index')}}">
         <i class="fas fa-users"></i>
             <span>Team</span></a>
     </li>
