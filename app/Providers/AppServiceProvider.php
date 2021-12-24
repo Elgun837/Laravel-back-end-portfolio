@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Setting;
+use App\Models\Team;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -29,6 +30,8 @@ class AppServiceProvider extends ServiceProvider
             
         $settings = Setting::find(1);
         $view->with('settings', $settings);
+        $teams = Team::all();
+        $view->with('teams', $teams);
            
            
             
