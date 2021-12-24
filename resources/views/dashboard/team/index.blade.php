@@ -35,7 +35,7 @@
 
                 <tr>
                     <th scope="row"></th>
-                    <td><img src="{{ asset('storage/uploads/members/'.$team->team_member_image) }}" width="75px"></td>
+                    <td><img class="img-fluid" src="{{ asset('storage/uploads/members/'.$team->team_member_image) }}" width="75px"></td>
                     <td>{{$team->team_member_name}}</td>
                     <td>{{$team->team_member_duty}}</td>
                     <td>{{$team->team_member_about}}</td>
