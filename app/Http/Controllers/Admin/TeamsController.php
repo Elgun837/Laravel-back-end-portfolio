@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TeamRequest;
 use App\Models\Team;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
 class TeamsController extends Controller
@@ -15,7 +17,8 @@ class TeamsController extends Controller
      */
     public function index()
     {
-        return view('dashboard.team.index');
+        $teams = Team::all();
+        return view('dashboard.team.index', compact('teams'));
     }
 
     /**
@@ -34,17 +37,35 @@ class TeamsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TeamRequest $request)
     {
-        $this->validate($request,[
-            'team_member_name' => 'required',
-            'team_member_duty' => 'required',
-            'team_member_about' => 'required',
-            'team_member_image' => 'nullable|mimes:png,jpg,jpeg,svg',
 
-        ]);
-        $teams = Team::create($request->all());
+
+        if($request->hasFile('team_member_image')){
+        $validated = $request->all();
+        $file = $validated['team_member_image'];
+        $extension = $file->getClientOriginalExtension();
+        $real_name = $file->getClientOriginalName();
+        Storage::disk('public')->makeDirectory('uploads/members');
+        $folder = storage_path('app/public/uploads/members');
+        $file_new_name = rand(0,90000)."-".md5($real_name).".".$extension;
+        $file->move($folder,$file_new_name);
+        $validated['team_member_image'] = $file_new_name;
+        Team::create($validated);
         return redirect()->back()->with('success', 'Successfully  added!');
+
+        }
+
+        else{
+            $fileName = 'default.jpg';
+            $request['team_member_image'] = $fileName;
+            Team::create($request->all());
+            return redirect()->back()->with('success', 'Successfully  added!');
+        }
+
+
+        
+    
     }
 
     /**
@@ -89,6 +110,10 @@ class TeamsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $teams = Team::findOrFail($id);
+
+        $teams->delete();
+
+        return redirect()->back()->with('success','Succesfully deleted!');
     }
 }

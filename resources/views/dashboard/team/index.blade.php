@@ -17,23 +17,38 @@
         <div class="card shadow mb-4 col-lg-8">
             <div class="card-body">
             <table class="table">
+
+
                 <caption>List of member</caption>
+
                 <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Photo</th>
                     <th scope="col">Name</th>
+                    <th scope="col">Name</th>
                     <th scope="col">About</th>
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($teams as $team)
+
                 <tr>
-                    <th scope="row">1</th>
-                    <td><img src="" width="100px"></td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <th scope="row"></th>
+                    <td><img src="{{ asset('storage/uploads/members/'.$team->team_member_image) }}" width="75px"></td>
+                    <td>{{$team->team_member_name}}</td>
+                    <td>{{$team->team_member_duty}}</td>
+                    <td>{{$team->team_member_about}}</td>
+                    <td>
+                        <form action="{{ route('admin-panel.team.destroy',$team->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-sm btn-danger"><i class="fa fa-trash-alt"></i></button>
+                        </form>
+                    </td>
                 </tr>
                 </tbody>
+                @endforeach
             </table>
             </div>
         </div>
@@ -51,7 +66,7 @@
 
                                 <p>
                                     Photo
-                                    <input class="form-control-file border" type="file" multiple="false" name="team_member_image" accept="image/*" id=finput onchange="upload()">
+                                    <input class="form-control-file border" type="file" multiple="false" name="team_member_image" accept="image/*">
                             </div>
                         </div>
                         <div class="col-md-12">
