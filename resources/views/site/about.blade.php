@@ -33,7 +33,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="left-image">
-                                    <img src="assets/images/about-image.jpg" alt="">
+                                    <img src="{{asset('/front/assets/images/about-image.jpg')}}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -52,36 +52,18 @@
                         <span>Suspendisse a ante in neque iaculis lacinia</span>
                     </div>
                 </div>
+                @foreach($teams as $team)
                 <div class="col-md-4">
                     <div class="team-item">
-                        <img src="assets/images/team_01.jpg" alt="">
+                        <img src="{{ asset('storage/uploads/members/'.$team->team_member_image) }}" alt="">
                         <div class="down-content">
-                            <h4>William Smith</h4>
-                            <span>Co-Founder</span>
-                            <p>In sem sem, dapibus non lacus auctor, ornare sollicitudin lacus. Aliquam ipsum urna, semper quis.</p>
+                            <h4>{{$team->team_member_name}}</h4>
+                            <span>{{$team->team_member_duty}}</span>
+                            <p>{{$team->team_member_about}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="team-item">
-                        <img src="assets/images/team_02.jpg" alt="">
-                        <div class="down-content">
-                            <h4>Mary Houston</h4>
-                            <span>Chief Marketing Officer</span>
-                            <p>In sem sem, dapibus non lacus auctor, ornare sollicitudin lacus. Aliquam ipsum urna, semper quis.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="team-item">
-                        <img src="assets/images/team_03.jpg" alt="">
-                        <div class="down-content">
-                            <h4>Paul Walker</h4>
-                            <span>Financial Analyst</span>
-                            <p>In sem sem, dapibus non lacus auctor, ornare sollicitudin lacus. Aliquam ipsum urna, semper quis.</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
