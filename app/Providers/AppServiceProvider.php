@@ -33,7 +33,6 @@ class AppServiceProvider extends ServiceProvider
         $teams = Team::all();
         $view->with('teams', $teams);
            
-           
             
             
      });

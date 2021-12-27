@@ -2,15 +2,7 @@
 
 @section('content')
 
-    <div class="container-fluid">
-
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Team</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                    class="text-white-50"></i>Add Team member</a>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                    class="fas fa-download fa-sm text-white-50"></i> Go back to site</a>
-        </div>
+   
 
         @if (session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>

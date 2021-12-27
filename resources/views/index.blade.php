@@ -8,6 +8,7 @@
           <!-- Item -->
           <div class="item item-1">
             <div class="img-fill">
+              <img src="{{ asset('front/assets/images/slide_01.jpg') }}" alt="">
                 <div class="text-content">
                   <h6>we are ready to help you</h6>
                   <h4>Financial Analysis<br>&amp; Consulting</h4>

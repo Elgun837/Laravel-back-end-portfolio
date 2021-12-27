@@ -43,31 +43,7 @@
         </div>
     </div>
 
-    <div class="team">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-heading">
-                        <h2>Our team <em>members</em></h2>
-                        <span>Suspendisse a ante in neque iaculis lacinia</span>
-                    </div>
-                </div>
-                @foreach($teams as $team)
-                <div class="col-md-4">
-                    <div class="team-item">
-                        <img src="{{ asset('storage/uploads/members/'.$team->team_member_image) }}" alt="">
-                        <div class="down-content">
-                            <h4>{{$team->team_member_name}}</h4>
-                            <span>{{$team->team_member_duty}}</span>
-                            <p>{{$team->team_member_about}}</p>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-
+    
     <div class="fun-facts">
         <div class="container">
             <div class="row">
@@ -112,6 +88,31 @@
         </div>
     </div>
 
+    <div class="team">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>Our team <em>members</em></h2>
+                        <span>Suspendisse a ante in neque iaculis lacinia</span>
+                    </div>
+                </div>
+                @foreach($teams as $team)
+                <div class="col-md-4">
+                    <div class="team-item">
+                        <img src="{{ asset('storage/uploads/members/'.$team->team_member_image) }}" alt="">
+                        <div class="down-content">
+                            <h4>{{$team->team_member_name}}</h4>
+                            <span>{{$team->team_member_duty}}</span>
+                            <p>{{$team->team_member_about}}</p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+<!-- 
     <div class="testimonials">
         <div class="container">
             <div class="row">
@@ -164,6 +165,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 @endsection()

@@ -39,8 +39,8 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <li class="nav-item @if(Request::segment(2) =="sliders") active  @endif">
-        <a class="nav-link " href="{{ route('admin-panel.sliders')}}">
+    <li class="nav-item @if(Request::segment(2) =="slide") active  @endif">
+        <a class="nav-link " href="{{ route('admin-panel.slide.index')}}">
         <i class="far fa-images"></i>
             <span>Sliders</span></a>
     </li>
