@@ -73,7 +73,7 @@ class SlidesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $slides = Slider::findOrFail($id);
     }
 
     /**
@@ -83,7 +83,12 @@ class SlidesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {
-        //
+    {   
+        
+        $slides = Slider::findOrFail($id);
+
+        $slides->delete();
+
+        return redirect()->back()->with('success','Succesfully deleted!');
     }
 }

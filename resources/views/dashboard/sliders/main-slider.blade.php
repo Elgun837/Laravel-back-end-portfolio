@@ -6,9 +6,14 @@
     @foreach($slides as $slide)
 
         <div class="card shadow mb-4">
-
+        <form class="m-4 row flex justify-content-end" action="{{ route('admin-panel.slide.destroy', $slide->id) }}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-sm btn-danger"><i class="fa fa-trash-alt"></i></button>
+        </form>
+                        
             <div class="card-body">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{ route('admin-panel.slide.update', $slide->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
 
 
@@ -25,26 +30,26 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 Subtitle <span style="color: red">*</span>
-                                <input type="text" name="subtitle" value="" class="form-control" required>
+                                <input type="text" name="subtitle" value="" class="form-control" >
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 Title <span style="color: red">*</span>
-                                <input type="text" name="title" value="" class="form-control" required>
+                                <input type="text" name="title" value="" class="form-control" >
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 Description <span style="color: red">*</span>
-                                <input type="text" name="description" value="{{ $slide->description}}" class="form-control" required>
+                                <input type="text" name="description" value="{{ $slide->description}}" class="form-control">
                             </div>
                         </div>
-                      
+                      <div class="row col-md-12">
                         <div class="col-md-6">
                             <div class="form-group">
                                 Button <span style="color: red">*</span>
-                                <input type="text" name="author" value="" class="form-control" required>
+                                <input type="text" name="author" value="" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -53,7 +58,7 @@
                                 <input type="text" value="" name="copyright" class="form-control">
                             </div>
                         </div>
-                    
+                        </div>
                     </div>
                     
         </div>
@@ -61,8 +66,11 @@
                     
                     <hr>
                     <div class="form-group row justify-content-center">
+                        
+                    
                         <button type="submit" class="col-3 m-4 btn btn-block btn-md btn-success">Update</button>
-                        <button type="submit" class="col-3 m-4 btn btn-block btn-md btn-danger">Delete</button>
+                       
+                        
                         
                     </div>
                 </form>
