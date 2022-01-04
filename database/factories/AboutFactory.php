@@ -19,7 +19,7 @@ class AboutFactory extends Factory
             "about_subtitle" => "Info desc 2",
             "about_image" => "Information title",
             "about_description" => "Info desc 1",
-            "about_backgorund_image" => "Info desc 2",
+            "about_background_image" => "Info desc 2",
         ];
     }
 }
