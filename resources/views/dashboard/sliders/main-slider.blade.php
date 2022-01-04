@@ -2,7 +2,19 @@
 
 @section('content')
 
-    
+    @if (session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+    @endif
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     @foreach($slides as $slide)
 
         <div class="card shadow mb-4">
@@ -13,30 +25,32 @@
         </form>
                         
             <div class="card-body">
-                <form action="{{ route('admin-panel.slide.update', $slide->id) }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('admin-panel.slide.update', $slide->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
-
+                    @method('put')
 
                     <div class="row">
-                        <div class="col-md-6">Slide 1
+                        <div class="col-md-6">Slide
                             <div class="form-group">
 
-                                <p>
-                                    Logo (125x42)
-                                    <input class="form-control-file border" type="file" multiple="false" name="logo" accept="image/*" id=finput onchange="upload()">
+                            <div class="slider-img-box">
+                                <img src="{{ asset($slide->slide_image)}}"  width="400px" alt="slide_image">
+                            </div>
+                                    
+                                    <input class="form-control-file border" type="file" src="{{ asset($slide->slide_image)}}" multiple="false" name="slide_image">
                             </div>
                         </div>
                         <div class="col-md-6">
                         <div class="col-md-12">
                             <div class="form-group">
                                 Subtitle <span style="color: red">*</span>
-                                <input type="text" name="subtitle" value="" class="form-control" >
+                                <input type="text" name="subtitle" value="{{ $slide->subtitle}}" class="form-control" >
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 Title <span style="color: red">*</span>
-                                <input type="text" name="title" value="" class="form-control" >
+                                <input type="text" name="title" value="{{ $slide->title}}" class="form-control" >
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -49,13 +63,13 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 Button <span style="color: red">*</span>
-                                <input type="text" name="author" value="" class="form-control">
+                                <input type="text" name="button" value="{{ $slide->button}}" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 Button link
-                                <input type="text" value="" name="copyright" class="form-control">
+                                <input type="text" value="{{ $slide->button_link}}" name="button_link" class="form-control">
                             </div>
                         </div>
                         </div>

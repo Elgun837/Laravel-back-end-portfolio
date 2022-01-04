@@ -39,7 +39,8 @@ class SlidesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        
     }
 
     /**
@@ -74,6 +75,22 @@ class SlidesController extends Controller
     public function update(Request $request, $id)
     {
         $slides = Slider::findOrFail($id);
+        $slides->title       = $request->title;
+        $slides->subtitle    = $request->subtitle;
+        $slides->description      = $request->description;
+        $slides->button   = $request->button;
+        $slides->button_link = $request->button_link;
+        if($request->hasFile('slide_image') ){
+
+            $fileName = 'slide_img_'.time(). '.'.$request->slide_image->extension();
+            $fileNameWithUpload = "storage/uploads/slider/".$fileName;
+            $request->slide_image->storeAs('public/uploads/slider', $fileName);
+            $slides->slide_image = $fileNameWithUpload;
+        }
+        
+        $slides->save();
+
+        return redirect()->back()->with('success','Succesfully updated!');
     }
 
     /**
