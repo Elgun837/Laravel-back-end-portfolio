@@ -16,7 +16,10 @@
         </div>
     @endif
     @foreach($slides as $slide)
-
+        <form class="m-4 row flex justify-content-end" action="{{ route('admin-panel.slide.store')}}" method="post">
+                            @csrf
+                            <button class="btn btn-sm btn-danger">Add new slide</button>
+        </form>
         <div class="card shadow mb-4">
         <form class="m-4 row flex justify-content-end" action="{{ route('admin-panel.slide.destroy', $slide->id) }}" method="post">
                             @csrf

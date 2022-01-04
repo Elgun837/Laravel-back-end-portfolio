@@ -39,8 +39,8 @@ class SlidesController extends Controller
      */
     public function store(Request $request)
     {
-        
-        
+        Slider::create($request->all());
+        return redirect()->back()->with('success','Succesfully added!');
     }
 
     /**
