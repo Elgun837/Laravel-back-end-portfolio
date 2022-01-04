@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Setting;
+use App\Models\About;
 use App\Models\Team;
 use App\Models\Slider;
 use Illuminate\Support\ServiceProvider;
@@ -35,6 +36,8 @@ class AppServiceProvider extends ServiceProvider
         $view->with('teams', $teams);
         $teams = Slider::all();
         $view->with('slides', $teams);
+        $abouts = About::find(1);
+        $view->with('abouts', $abouts);
            
             
             

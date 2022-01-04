@@ -1,58 +1,73 @@
 @extends("dashboard.layouts.layout1")
 
 @section('content')
+@if (session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+    @endif
 
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
         <div class="card shadow mb-4">
-
+       
             <div class="card-body">
-                <form action="" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin-panel.about-us.update')}}" method="POST" enctype="multipart/form-data">
                     @csrf
-
+                    
                     <div class="row">
                         <div class="col-md-12">
+                           
                             <div class="form-group">
                                 Page Subtitle <span style="color: red">*</span>
-                                <input type="text" name="subtitle" value="" class="form-control" required>
+                                <input type="text" name="page_subtitle" value="{{ $abouts->page_subtitle }}" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-12">About page background image
                             <div class="form-group">
-                                <input class="form-control-file border" type="file" multiple="false" name="logo" accept="image/*" id=finput onchange="upload()">
+                            <img src="{{asset($abouts->about_image)}}" alt="" width="500px">
+                                <input class="form-control-file border" type="file" src="{{asset($abouts->about_image)}}" multiple="false" name="about_image" accept="image/*">
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 About us section title <span style="color: red">*</span>
-                                <input type="text" name="subtitle" value="" class="form-control" required>
+                                <input type="text" name="about_title" value="{{$abouts->about_title}}" class="form-control" required>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 About us section subtitle <span style="color: red">*</span>
-                                <input type="text" name="subtitle" value="" class="form-control" required>
+                                <input type="text" name="about_subtitle" value="{{$abouts->about_subtitle}}" class="form-control" required>
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
                                 About us section description <span style="color: red">*</span>
-                                <input type="text" name="description" value="" class="form-control" required>
+                                <input type="text" name="about_description" value="{{$abouts->about_description}}" class="form-control" required>
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12"> About section image
                             <div class="form-group">
-                                About section image
-                                <input class="form-control-file border" type="file" multiple="false" name="logo" accept="image/*" id=finput onchange="upload()">
+                               
+                                <img src="{{asset($abouts->about_background_image)}}" alt="" width="500px">
+                                <input class="form-control-file border" type="file" src="{{asset($abouts->about_background_image)}}" multiple="false" name="about_background_image" accept="image/*">
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
                                 Description <span style="color: red">*</span>
-                                <input type="text" name="description" value="" class="form-control" required>
+                                <input type="text" name="page_subtitle" value="{{$abouts->page_subtitle}}" class="form-control" required>
                             </div>
                         </div>
-
+                   
                     </div>
                     <hr>
                     <div class="form-group">
@@ -62,7 +77,7 @@
             </div>
         </div>
 
-
+   
 
     </div>
 

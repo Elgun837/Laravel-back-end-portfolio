@@ -5,7 +5,7 @@
 
 
     <div class="card shadow mb-4">
-
+    
         <div class="card-body">
             <form action="{{ route('admin-panel.settings.update') }}" method="post" enctype="multipart/form-data">
                 @csrf
