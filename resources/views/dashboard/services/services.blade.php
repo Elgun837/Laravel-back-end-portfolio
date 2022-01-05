@@ -54,7 +54,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 Description <span style="color: red">*</span>
-                                <input type="text" name="service_description" value="{{$service->service_description}}" class="form-control" required>
+                                <textarea  name="service_description" value="{{$service->service_description}}" placeholder="{{$service->service_description}}" class="form-control" required></textarea>
                             </div>
                         </div>
 

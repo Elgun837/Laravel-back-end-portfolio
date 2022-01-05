@@ -15,14 +15,13 @@ class AboutController extends Controller
    }
 
    public function update(Request $request){
-    $abouts = About::find(1);
+    $abouts = About::findOrFail(1);
     
     $abouts->page_subtitle          = $request->page_subtitle;
     $abouts->about_title            = $request->about_title;
     $abouts->about_subtitle         = $request->about_subtitle;
-    $abouts->about_image            = $request->about_image;
     $abouts->about_description      = $request->about_description;
-    $abouts->about_background_image = $request->about_background_image;
+ 
     
     if($request->hasFile('about_image') ){
 

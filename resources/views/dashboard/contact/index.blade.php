@@ -42,7 +42,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 Map <span style="color: red">*</span>
-                                <input type="text" name="map" value="{{$contact->map}}" class="form-control">
+                                <textarea id="contact_map" name="map" value="{{$contact->map}}" placeholder="{{$contact->map}}" class="form-control"></textarea>
                             </div>
                         </div>
 

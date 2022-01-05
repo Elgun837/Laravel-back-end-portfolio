@@ -27,9 +27,9 @@ class AboutRequest extends FormRequest
             'page_subtitle' => 'nullable',
             'about_title' => 'nullable',
             'about_subtitle' => 'nullable',
-            'about_image' => 'image|mimes:png,jpeg,jpg',
+            'about_image' => 'image|required|mimes:png,jpeg,jpg',
             'about_description' => 'nullable',
-            'about_backgorund_image' => 'image|mimes:png,jpeg,jpg',
+            'about_backgorund_image' => 'image|required|mimes:png,jpeg,jpg',
         ];
     }
 }

@@ -28,9 +28,9 @@
                                 <input type="text" name="page_subtitle" value="{{ $abouts->page_subtitle }}" class="form-control" required>
                             </div>
                         </div>
-                        <div class="col-md-12">About page background image
+                        <div class="col-md-12">About  image
                             <div class="form-group">
-                            <img src="{{asset($abouts->about_image)}}" alt="" width="500px">
+                            <img src="{{asset($abouts->about_image)}}" alt="about_image" width="500px">
                                 <input class="form-control-file border" type="file" src="{{asset($abouts->about_image)}}" multiple="false" name="about_image" accept="image/*">
                             </div>
                         </div>
@@ -50,23 +50,20 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 About us section description <span style="color: red">*</span>
-                                <input type="text" name="about_description" value="{{$abouts->about_description}}" class="form-control" required>
+                                <textarea name="about_description" value="{{$abouts->about_description}}" placeholder="{{$abouts->about_description}}" class="form-control"></textarea>
                             </div>
                         </div>
-                        <div class="col-md-12"> About section image
-                            <div class="form-group">
+                        <div class="col-md-12"> About backroung image
+                            
+                        
+                        <div class="form-group">
                                
-                                <img src="{{asset($abouts->about_background_image)}}" alt="" width="500px">
-                                <input class="form-control-file border" type="file" src="{{asset($abouts->about_background_image)}}" multiple="false" name="about_background_image" accept="image/*">
+                        <img src="{{asset($abouts->about_background_image)}}" alt="about_background_image" width="500px">
+                                <input class="form-control-file border" type="file"  src="{{asset($abouts->about_background_image)}}" multiple="false" name="about_background_image">
                             </div>
                         </div>
 
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                Description <span style="color: red">*</span>
-                                <input type="text" name="page_subtitle" value="{{$abouts->page_subtitle}}" class="form-control" required>
-                            </div>
-                        </div>
+                        
                    
                     </div>
                     <hr>

@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1>About Us</h1>
-                    <span>We have over 20 years of experience</span>
+                    <span>{{$abouts->page_subtitle}}</span>
                 </div>
             </div>
         </div>
@@ -24,16 +24,15 @@
                         <div class="row">
                             <div class="col-md-6 align-self-center">
                                 <div class="right-content">
-                                    <span>our solid background on finance</span>
-                                    <h2>Get to know about <em>our company</em></h2>
-                                    <p>Fusce nec ultrices lectus. Duis nec scelerisque risus. Ut id tempor turpis, ac dignissim ipsum. Nulla ullamcorper, ipsum vel condimentum congue, mi odio vehicula tellus, sit amet malesuada justo sem.
-                                        <br><br>Pellentesque in sagittis lacus, vel auctor sem. Quisque eu quam eleifend, ullamcorper dui nec, luctus quam.</p>
-                                    <a href="" class="filled-button">Read More</a>
+                                    <span>{{$abouts->about_subtitle}}</span>
+                                    <h2>{{$abouts->about_title}}</h2>
+                                    <p>{{$abouts->about_description}}</p>
+                                    
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="left-image">
-                                    <img src="{{asset('/front/assets/images/about-image.jpg')}}" alt="">
+                                    <img src="{{asset($abouts->about_image)}}" alt="">
                                 </div>
                             </div>
                         </div>
@@ -43,7 +42,11 @@
         </div>
     </div>
 
-    
+    <style>
+        .fun-facts{
+            background-image:url({{$abouts->about_background_image}});
+        }
+    </style>
     <div class="fun-facts">
         <div class="container">
             <div class="row">
