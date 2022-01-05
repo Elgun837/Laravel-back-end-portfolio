@@ -7,6 +7,7 @@ use App\Models\About;
 use App\Models\Team;
 use App\Models\Contact;
 use App\Models\Slider;
+use App\Models\Service;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -37,10 +38,12 @@ class AppServiceProvider extends ServiceProvider
         $view->with('teams', $teams);
         $teams = Slider::all();
         $view->with('slides', $teams);
+        $services = Service::all();
+        $view->with('services', $services);
         $abouts = About::find(1);
         $view->with('abouts', $abouts);
         $contact = Contact::find(1);
-        $view->with('abouts', $contact);
+        $view->with('contact', $contact);
            
             
             

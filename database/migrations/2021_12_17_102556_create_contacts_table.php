@@ -18,6 +18,7 @@ class CreateContactsTable extends Migration
             $table->string('tel_number');
             $table->string('email');
             $table->string('location');
+            $table->text('map');
             $table->timestamps();
         });
     }

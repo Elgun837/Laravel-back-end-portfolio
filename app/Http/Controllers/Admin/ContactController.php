@@ -18,12 +18,14 @@ class ContactController extends Controller
         $this->validate($request,[
             'tel_number' => 'required',
             'email' => 'required|email',
-            'location' => 'nullable'
+            'location' => 'nullable',
+            'map' => 'nullable'
         ]); 
 
         $contact->tel_number    = $request->tel_number;
         $contact->email         = $request->email;
         $contact->location      = $request->location;
+        $contact->map           = $request->map;
        
         $contact->save();
 

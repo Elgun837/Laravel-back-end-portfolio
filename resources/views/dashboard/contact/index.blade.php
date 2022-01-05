@@ -39,6 +39,12 @@
                                 <input type="text" name="location" value="{{$contact->location}}" class="form-control" required>
                             </div>
                         </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                Map <span style="color: red">*</span>
+                                <input type="text" name="map" value="{{$contact->map}}" class="form-control">
+                            </div>
+                        </div>
 
                     </div>
                     <hr>

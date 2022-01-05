@@ -50,7 +50,7 @@
     <hr class="sidebar-divider">
 
     <li class="nav-item @if(Request::segment(2) =="services") active  @endif">
-        <a class="nav-link " href="{{ route('admin-panel.services')}}">
+        <a class="nav-link " href="{{ route('admin-panel.services.index')}}">
         <i class="fas fa-server"></i>
             <span>Services</span></a>
     </li>

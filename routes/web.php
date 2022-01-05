@@ -37,7 +37,7 @@ Route::group(['prefix' => '/admin', 'as' => 'admin-panel.'],function () {
 
         Route::resource("slide",         SlidesController::class);
 
-        Route::get("/services",          [ServicesController::class, 'index'])->name('services');
+        Route::resource("services",       ServicesController::class,);
 
         Route::get("/information",       [InformationController::class, 'index'])->name('information');
 
