@@ -8,7 +8,7 @@ use App\Models\Team;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 
-class TeamsController extends Controller
+class TeamController extends Controller
 {
     /**
      * Display a listing of the resource.

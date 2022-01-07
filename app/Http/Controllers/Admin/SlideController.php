@@ -8,7 +8,7 @@ use App\Models\Slider;
 use Illuminate\Support\Facades\Storage;
 
 
-class SlidesController extends Controller
+class SlideController extends Controller
 {
     /**
      * Display a listing of the resource.

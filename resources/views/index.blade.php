@@ -196,31 +196,27 @@
           </div>
           <div class="col-md-12">
             <div class="contact-form">
-              <form id="contact" action="" method="post">
+              <form id="" method="POST" action="">
+                @csrf
                 <div class="row">
-                  <div class="col-lg-4 col-md-12 col-sm-12">
+                  <div class="col-lg-6 col-md-12 col-sm-12">
                     <fieldset>
-                      <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
+                      <input name="title" type="text" class="form-control" id="title" placeholder="Full Name" required="">
                     </fieldset>
                   </div>
-                  <div class="col-lg-4 col-md-12 col-sm-12">
+                  <div class="col-lg-6 col-md-12 col-sm-12">
                     <fieldset>
                       <input name="email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*" placeholder="E-Mail Address" required="">
                     </fieldset>
                   </div>
-                  <div class="col-lg-4 col-md-12 col-sm-12">
+                  <div class="col-lg-12">
                     <fieldset>
-                      <input name="subject" type="text" class="form-control" id="subject" placeholder="Subject" required="">
+                      <textarea name="body" rows="6" class="form-control" id="body" placeholder="Your Message" required=""></textarea>
                     </fieldset>
                   </div>
                   <div class="col-lg-12">
                     <fieldset>
-                      <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
-                    </fieldset>
-                  </div>
-                  <div class="col-lg-12">
-                    <fieldset>
-                      <button type="submit" id="form-submit" class="border-button">Send Message</button>
+                      <button type="button" id="send-message" class="border-button">Send Message</button>
                     </fieldset>
                   </div>
                 </div>
@@ -230,7 +226,56 @@
         </div>
       </div>
     </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready ( function () {
+            $(document).on ("click", "#send-message", function () {
+                    $.ajax({
+                        url: "{{ route('api-message') }}",
+                        type: 'POST',
+                        data: {
+                            "_token": "{{ csrf_token() }}",
+                            body: $('#body').val(),
+                            email: $('#email').val(),
+                            title: $('#title').val(),
 
+                        },
+                        success: function( data ){
+                          Swal.fire(
+                                      'Your message succesfully send!',
+                                      'Thank you for your attention',
+                                      
+                                    )
+                            // if(data.status === 200){
+                            //     Swal.fire(
+                            //         'Success!',
+                            //         response.message,
+                            //         'success'
+                            //     );
+                            // }
+                           
+                            // else if(status === 422){
+                            //     Swal.fire({
+                            //         icon: 'error',
+                            //         title: 'Oops...',
+                            //         text: response.message,
+                            //         footer: '<a href>Server Error!</a>'
+                            //     });
+                            // }
+                        },
+                        error : (error) => {
+                          Swal.fire(
+                                      'Something went wrong',
+                                      'Please fill all labels',
+                                      
+                                    )
+                        }
+                    });
+            });
+        });
+      </script>
+      
     <div class="partners">
       <div class="container">
         <div class="row">
