@@ -8,27 +8,31 @@ use App\Models\Contact;
 
 class ContactController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $contact = Contact::find(1);
         return view('dashboard.contact.index', compact('contact'));
     }
-    public function updateContact(Request $request){
+    public function updateContact(Request $request)
+    {
         $contact = Contact::find(1);
-        
-        $this->validate($request,[
+
+        $this->validate($request, [
             'tel_number' => 'required',
             'email' => 'required|email',
             'location' => 'nullable',
-            'map' => 'nullable'
-        ]); 
+            'map' => 'nullable',
+        ]);
 
-        $contact->tel_number    = $request->tel_number;
-        $contact->email         = $request->email;
-        $contact->location      = $request->location;
-        $contact->map           = $request->map;
-       
+        $contact->tel_number = $request->tel_number;
+        $contact->email = $request->email;
+        $contact->location = $request->location;
+        $contact->map = $request->map;
+
         $contact->save();
 
-        return redirect()->back()->with('success','Succesfully updated!');
+        return redirect()
+            ->back()
+            ->with('success', 'Succesfully updated!');
     }
 }

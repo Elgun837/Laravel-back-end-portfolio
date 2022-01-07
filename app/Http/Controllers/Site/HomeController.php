@@ -9,9 +9,10 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $settings = Setting::find(1);
         $teams = Team::all();
-        return view('index', compact('settings','teams'));
+        return view('index', compact('settings', 'teams'));
     }
 }

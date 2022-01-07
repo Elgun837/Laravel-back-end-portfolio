@@ -14,12 +14,12 @@ class AboutFactory extends Factory
     public function definition()
     {
         return [
-            "page_subtitle" => "Information title",
-            "about_title" => "Info desc 1",
-            "about_subtitle" => "Info desc 2",
-            "about_image" => "Information title",
-            "about_description" => "Info desc 1",
-            "about_background_image" => "Info desc 2",
+            'page_subtitle' => 'Information title',
+            'about_title' => 'Info desc 1',
+            'about_subtitle' => 'Info desc 2',
+            'about_image' => 'Information title',
+            'about_description' => 'Info desc 1',
+            'about_background_image' => 'Info desc 2',
         ];
     }
 }

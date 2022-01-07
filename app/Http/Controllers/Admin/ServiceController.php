@@ -14,7 +14,7 @@ class ServiceController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
         $services = Service::all();
         return view('dashboard.services.services', compact('services'));
     }
@@ -38,7 +38,9 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         Service::create($request->all());
-        return redirect()->back()->with('success','Succesfully added!');
+        return redirect()
+            ->back()
+            ->with('success', 'Succesfully added!');
     }
 
     /**
@@ -73,19 +75,27 @@ class ServiceController extends Controller
     public function update(Request $request, $id)
     {
         $services = Service::findOrFail($id);
-        $services->service_title            = $request->service_title;
-        $services->service_description      = $request->service_description;
-        if($request->hasFile('service_image') ){
-
-            $fileName = 'service_image'.time(). '.'.$request->service_image->extension();
-            $fileNameWithUpload = "storage/uploads/service/".$fileName;
-            $request->service_image->storeAs('public/uploads/service', $fileName);
+        $services->service_title = $request->service_title;
+        $services->service_description = $request->service_description;
+        if ($request->hasFile('service_image')) {
+            $fileName =
+                'service_image' .
+                time() .
+                '.' .
+                $request->service_image->extension();
+            $fileNameWithUpload = 'storage/uploads/service/' . $fileName;
+            $request->service_image->storeAs(
+                'public/uploads/service',
+                $fileName
+            );
             $services->service_image = $fileNameWithUpload;
         }
-        
+
         $services->save();
 
-        return redirect()->back()->with('success','Succesfully updated!');
+        return redirect()
+            ->back()
+            ->with('success', 'Succesfully updated!');
     }
 
     /**
@@ -100,6 +110,8 @@ class ServiceController extends Controller
 
         $services->delete();
 
-        return redirect()->back()->with('success','Succesfully deleted!');
+        return redirect()
+            ->back()
+            ->with('success', 'Succesfully deleted!');
     }
 }

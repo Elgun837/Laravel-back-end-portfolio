@@ -11,7 +11,7 @@
             </div>
         </div>
     </div>
-    <?php $num = 0 ?>
+    <?php $num = 0; ?>
     <div class="single-services">
         <div class="container">
             <div class="row" id="tabs">
@@ -25,7 +25,7 @@
                 </div>
                 <div class="col-md-8">
                     <section class='tabs-content'>
-                    <?php $num2 = 0 ?>
+                    <?php $num2 = 0; ?>
                     @foreach($services as $service)
                     
                         <article id='tabs-{{$num2 = $num2 +1}}'>

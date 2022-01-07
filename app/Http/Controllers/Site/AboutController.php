@@ -7,10 +7,8 @@ use Illuminate\Http\Request;
 
 class AboutController extends Controller
 {
-    public function index(){
-
-
+    public function index()
+    {
         return view('site.about');
     }
-    
 }

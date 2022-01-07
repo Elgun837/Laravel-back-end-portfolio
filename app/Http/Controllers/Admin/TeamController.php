@@ -39,33 +39,29 @@ class TeamController extends Controller
      */
     public function store(TeamRequest $request)
     {
-
-
-        if($request->hasFile('team_member_image')){
-        $validated = $request->all();
-        $file = $validated['team_member_image'];
-        $extension = $file->getClientOriginalExtension();
-        $real_name = $file->getClientOriginalName();
-        Storage::disk('public')->makeDirectory('uploads/members');
-        $folder = storage_path('app/public/uploads/members');
-        $file_new_name = rand(0,90000)."-".md5($real_name).".".$extension;
-        $file->move($folder,$file_new_name);
-        $validated['team_member_image'] = $file_new_name;
-        Team::create($validated);
-        return redirect()->back()->with('success', 'Successfully  added!');
-
-        }
-
-        else{
+        if ($request->hasFile('team_member_image')) {
+            $validated = $request->all();
+            $file = $validated['team_member_image'];
+            $extension = $file->getClientOriginalExtension();
+            $real_name = $file->getClientOriginalName();
+            Storage::disk('public')->makeDirectory('uploads/members');
+            $folder = storage_path('app/public/uploads/members');
+            $file_new_name =
+                rand(0, 90000) . '-' . md5($real_name) . '.' . $extension;
+            $file->move($folder, $file_new_name);
+            $validated['team_member_image'] = $file_new_name;
+            Team::create($validated);
+            return redirect()
+                ->back()
+                ->with('success', 'Successfully  added!');
+        } else {
             $fileName = 'default.jpg';
             $request['team_member_image'] = $fileName;
             Team::create($request->all());
-            return redirect()->back()->with('success', 'Successfully  added!');
+            return redirect()
+                ->back()
+                ->with('success', 'Successfully  added!');
         }
-
-
-        
-    
     }
 
     /**
@@ -99,7 +95,6 @@ class TeamController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
     }
 
     /**
@@ -114,6 +109,8 @@ class TeamController extends Controller
 
         $teams->delete();
 
-        return redirect()->back()->with('success','Succesfully deleted!');
+        return redirect()
+            ->back()
+            ->with('success', 'Succesfully deleted!');
     }
 }

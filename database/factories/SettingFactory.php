@@ -14,8 +14,8 @@ class SettingFactory extends Factory
     public function definition()
     {
         return [
-            'title' => "Gym-Fitness",
-            'subtitle' => "Idman sağlamlıqdır!",
+            'title' => 'Gym-Fitness',
+            'subtitle' => 'Idman sağlamlıqdır!',
         ];
     }
 }

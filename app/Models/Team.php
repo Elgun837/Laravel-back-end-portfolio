@@ -10,6 +10,10 @@ class Team extends Model
     use HasFactory;
 
     protected $table = 'teams';
-    protected $fillable = ['team_member_name', 'team_member_duty','team_member_about','team_member_image'];
-
+    protected $fillable = [
+        'team_member_name',
+        'team_member_duty',
+        'team_member_about',
+        'team_member_image',
+    ];
 }
