@@ -50,7 +50,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 About us section description <span style="color: red">*</span>
-                                <textarea name="about_description" value="{{$abouts->about_description}}" placeholder="{{$abouts->about_description}}" class="form-control"></textarea>
+                                <textarea name="about_description" value="{{$abouts->about_description}}" placeholder="{{$abouts->about_description}}" class="form-control">{{$abouts->about_description}}</textarea>
                             </div>
                         </div>
                         <div class="col-md-12"> About backroung image

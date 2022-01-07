@@ -14,9 +14,7 @@ class InformationFactory extends Factory
     public function definition()
     {
         return [
-            'title' => 'Information title',
-            'description_1' => 'Info desc 1',
-            'description_2' => 'Info desc 2',
+            
         ];
     }
 }

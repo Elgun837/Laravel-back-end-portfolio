@@ -82,9 +82,7 @@
       </div>
     </div>
     <style>
-        .fun-facts{
-            background-image:url({{$abouts->about_background_image}});
-        }
+        
     </style>
     <div class="fun-facts">
       <div class="container">
