@@ -15,10 +15,20 @@ class CreateInformationTable extends Migration
     {
         Schema::create('information', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
-            $table->text('description_1')->nullable();
-            $table->string('description_2')->nullable();
+            $table->string('info_title')->nullable();
+            $table->string('info_subtitle')->nullable();
+            $table->string('info_description')->nullable();
+            $table->string('info_section_title')->nullable();
+            $table->string('info_section_subtitle')->nullable();
+            $table->string('info_section_descriotion')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('behance')->nullable();
+            $table->string('github')->nullable();
             $table->string('info_image')->nullable();
+            $table->string('info_section_image')->nullable();
             $table->timestamps();
         });
     }
