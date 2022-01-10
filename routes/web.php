@@ -45,6 +45,9 @@ Route::group(['prefix' => '/admin', 'as' => 'admin-panel.'],function () {
         Route::resource("services",             ServiceController::class,);
 
         Route::get("/information",             [InformationController::class, 'index'])->name('information');
+        Route::post("/information/updateInfo",     [InformationController::class, 'updateInfo'])->name('information.updateInfo');
+        Route::post("/information/updateAbout",    [InformationController::class, 'updateAbout'])->name('information.updateAbout');
+        Route::post("/information/updateLinks",    [InformationController::class, 'updateLinks'])->name('information.updateLinks');
 
         Route::resource("team",                 TeamController::class);
 

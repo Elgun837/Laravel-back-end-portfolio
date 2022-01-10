@@ -8,6 +8,7 @@ use App\Models\Team;
 use App\Models\Contact;
 use App\Models\Slider;
 use App\Models\Message;
+use App\Models\Information;
 use App\Models\User;
 use App\Models\Service;
 use Illuminate\Support\ServiceProvider;
@@ -48,6 +49,8 @@ class AppServiceProvider extends ServiceProvider
             $view->with('abouts', $abouts);
             $contact = Contact::find(1);
             $view->with('contact', $contact);
+            $info = Information::find(1);
+            $view->with('info', $info);
         });
     }
 }

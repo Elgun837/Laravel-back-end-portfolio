@@ -33,7 +33,7 @@
             <span>Mauris ut dapibus velit cras interdum nisl ac urna tempor mollis.</span>
           </div>
           <div class="col-md-4">
-            <a href="#" class="border-button">Contact Us</a>
+            <a href="{{route('contact-us')}}" class="border-button">Contact Us</a>
           </div>
         </div>
       </div>
@@ -48,36 +48,19 @@
               <span>Aliquam id urna imperdiet libero mollis hendrerit</span>
             </div>
           </div>
+          <?php $num = 0; ?>
+          @foreach($services as $service)
           <div class="col-md-4">
             <div class="service-item">
-              <img src="{{ asset('front/assets/images/service_01.jpg') }}" alt="">
+              <img src="{{ asset($service->service_image) }}" alt="">
               <div class="down-content">
-                <h4>Digital Currency</h4>
-                <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-                <a href="" class="filled-button">Read More</a>
+                <h4>{{$service->service_title}}</h4>
+                <p>{{$service->service_description}}</p>
+                <a href="/services/#tabs-{{$num = $num+1}}" class="filled-button">Read More</a>
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="service-item">
-              <img src="{{ asset('front/assets/images/service_02.jpg')}}" alt="">
-              <div class="down-content">
-                <h4>Market Analysis</h4>
-                <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-                <a href="" class="filled-button">Read More</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-item">
-              <img src="{{ asset('front/assets/images/service_03.jpg')}}" alt="">
-              <div class="down-content">
-                <h4>Historical Data</h4>
-                <p>Sed tincidunt dictum lobortis. Aenean tempus diam vel augue luctus dignissim. Nunc ornare leo tortor.</p>
-                <a href="" class="filled-button">Read More</a>
-              </div>
-            </div>
-          </div>
+          @endforeach
         </div>
       </div>
     </div>
@@ -89,11 +72,10 @@
         <div class="row">
           <div class="col-md-6">
             <div class="left-content">
-              <span>Lorem ipsum dolor sit amet</span>
-              <h2>Our solutions for your <em>business growth</em></h2>
-              <p>Pellentesque ultrices at turpis in vestibulum. Aenean pretium elit nec congue elementum. Nulla luctus laoreet porta. Maecenas at nisi tempus, porta metus vitae, faucibus augue.
-              <br><br>Fusce et venenatis ex. Quisque varius, velit quis dictum sagittis, odio velit molestie nunc, ut posuere ante tortor ut neque.</p>
-              <a href="" class="filled-button">Read More</a>
+              <span>{{$info->info_subtitle}}</span>
+              <h2>{{$info->info_title}}</h2>
+              <p>{{$info->info_description}}</p>
+              <a href="{{route('about-us')}}" class="filled-button">Read More</a>
             </div>
           </div>
           <div class="col-md-6 align-self-center">
@@ -136,14 +118,14 @@
               <div class="row">
                 <div class="col-md-6">
                   <div class="left-image">
-                    <img src="{{ asset('front/assets/images/more-info.jpg')}}" alt="">
+                    <img src="{{ asset($info->info_section_image)}}" alt="">
                   </div>
                 </div>
                 <div class="col-md-6 align-self-center">
                   <div class="right-content">
-                    <span>Who we are</span>
-                    <h2>Get to know about <em>our company</em></h2>
-                    <p>Curabitur pulvinar sem a leo tempus facilisis. Sed non sagittis neque. Nulla conse quat tellus nibh, id molestie felis sagittis ut. Nam ullamcorper tempus ipsum in cursus<br><br>Praes end at dictum metus. Morbi id hendrerit lectus, nec dapibus ex. Etiam ipsum quam, luctus eu egestas eget, tincidunt</p>
+                    <span>{{$info->info_section_subtitle}}</span>
+                    <h2>{{$info->info_section_title}}</h2>
+                    <p>{{$info->info_section_descriotion}}</p>
                     <a href="#" class="filled-button">Read More</a>
                   </div>
                 </div>
@@ -274,7 +256,7 @@
         });
       </script>
       
-    <div class="partners">
+    <!-- <div class="partners">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
@@ -304,6 +286,6 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 @endsection
