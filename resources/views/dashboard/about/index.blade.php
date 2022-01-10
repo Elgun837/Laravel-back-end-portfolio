@@ -53,15 +53,7 @@
                                 <textarea name="about_description" value="{{$abouts->about_description}}" placeholder="{{$abouts->about_description}}" class="form-control">{{$abouts->about_description}}</textarea>
                             </div>
                         </div>
-                        <div class="col-md-12"> About backroung image
-                            
                         
-                        <div class="form-group">
-                               
-                        <img src="{{asset($abouts->about_background_image)}}" alt="about_background_image" width="500px">
-                                <input class="form-control-file border" type="file"  src="{{asset($abouts->about_background_image)}}" multiple="false" name="about_background_image">
-                            </div>
-                        </div>
 
                         
                    

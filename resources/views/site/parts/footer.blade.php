@@ -7,10 +7,12 @@
               <h4>Finance Business</h4>
               <p>Vivamus tellus mi. Nulla ne cursus elit,vulputate. Sed ne cursus augue hasellus lacinia sapien vitae.</p>
               <ul class="social-icons">
-                <li><a rel="nofollow" href="https://fb.com/templatemo" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+              <li><a href="{{$info->facebook}}"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="{{$info->twitter}}"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="{{$info->instagram}}"><i class="fa fa-instagram"></i></a></li>
+              <li><a href="{{$info->behance}}"><i class="fa fa-behance"></i></a></li>
+              <li><a href="{{$info->youtube}}"><i class="fa fa-youtube"></i></a></li>
+              <li><a href="{{$info->github}}"><i class="fa fa-github"></i></a></li>
               </ul>
             </div>
             <div class="col-md-3 footer-item">
@@ -26,11 +28,11 @@
             <div class="col-md-3 footer-item">
               <h4>Additional Pages</h4>
               <ul class="menu-list">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">How We Work</a></li>
-                <li><a href="#">Quick Support</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="/about-us">About Us</a></li>
+                <li><a href="/about-us">How We Work</a></li>
+                <li><a href="/contact-us">Quick Support</a></li>
+                <li><a href="/contact-us">Contact Us</a></li>
+                <li><a href="/services">Privacy Policy</a></li>
               </ul>
             </div>
             <div class="col-md-3 footer-item last-item">

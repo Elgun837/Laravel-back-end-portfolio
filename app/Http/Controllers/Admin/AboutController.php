@@ -34,19 +34,7 @@ class AboutController extends Controller
             $request->about_image->storeAs('public/uploads/about', $fileName);
             $abouts->about_image = $fileNameWithUpload;
         }
-        if ($request->hasFile('about_background_image')) {
-            $fileName =
-                'about_back_img_' .
-                time() .
-                '.' .
-                $request->about_background_image->extension();
-            $fileNameWithUpload = 'storage/uploads/about/' . $fileName;
-            $request->about_background_image->storeAs(
-                'public/uploads/about',
-                $fileName
-            );
-            $abouts->about_background_image = $fileNameWithUpload;
-        }
+        
 
         $abouts->save();
 

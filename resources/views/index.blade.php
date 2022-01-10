@@ -65,7 +65,9 @@
       </div>
     </div>
     <style>
-        
+        .fun-facts{
+            background-image:url({{$info->info_image}});
+        }
     </style>
     <div class="fun-facts">
       <div class="container">
@@ -165,7 +167,7 @@
       </div>
     </div>
 
-    <div class="callback-form">
+    <div class="callback-form mb-5">
       <div class="container">
         <div class="row">
           <div class="col-md-12">

@@ -47,48 +47,47 @@
             background-image:url({{$abouts->about_background_image}});
         }
     </style>
-    <div class="fun-facts">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="left-content">
-                        <span>Lorem ipsum dolor sit amet</span>
-                        <h2>Our solutions for your <em>business growth</em></h2>
-                        <p>Pellentesque ultrices at turpis in vestibulum. Aenean pretium elit nec congue elementum. Nulla luctus laoreet porta. Maecenas at nisi tempus, porta metus vitae, faucibus augue.
-                            <br><br>Fusce et venenatis ex. Quisque varius, velit quis dictum sagittis, odio velit molestie nunc, ut posuere ante tortor ut neque.</p>
-                        <a href="" class="filled-button">Read More</a>
-                    </div>
-                </div>
-                <div class="col-md-6 align-self-center">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="count-area-content">
-                                <div class="count-digit">945</div>
-                                <div class="count-title">Work Hours</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="count-area-content">
-                                <div class="count-digit">1280</div>
-                                <div class="count-title">Great Reviews</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="count-area-content">
-                                <div class="count-digit">578</div>
-                                <div class="count-title">Projects Done</div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="count-area-content">
-                                <div class="count-digit">26</div>
-                                <div class="count-title">Awards Won</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="fun-facts">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="left-content">
+              <span>{{$info->info_subtitle}}</span>
+              <h2>{{$info->info_title}}</h2>
+              <p>{{$info->info_description}}</p>
+              <a href="{{route('about-us')}}" class="filled-button">Read More</a>
             </div>
+          </div>
+          <div class="col-md-6 align-self-center">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="count-area-content">
+                  <div class="count-digit">945</div>
+                  <div class="count-title">Work Hours</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="count-area-content">
+                  <div class="count-digit">1280</div>
+                  <div class="count-title">Great Reviews</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="count-area-content">
+                  <div class="count-digit">578</div>
+                  <div class="count-title">Projects Done</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="count-area-content">
+                  <div class="count-digit">26</div>
+                  <div class="count-title">Awards Won</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
     <div class="team">
