@@ -25,7 +25,7 @@
                     <div class="row">
                         <div class="col-md-5">
                             <div class="form-group">
-                                <img id="info-image" src="{{$info->info_image}}" alt="" srcset="">
+                                <img id="info-image" src="{{asset($info->info_image)}}"  width="400px">
                                 Information background image
                                 <input id="file-input" class="form-control-file border" type="file" multiple="false" name="info_image">
                             </div>
@@ -68,7 +68,7 @@
                         <div class="row">
                             <div class="col-md-5">
                                 <div class="form-group">
-                                    <img id="info-image2" src="{{$info->info_section_image}}" alt="" srcset="">
+                                    <img id="info-image2" src="{{asset($info->info_section_image)}}" alt="" srcset="" width="400px">
                                     <input id="file-input2" class="form-control-file border" type="file" multiple="false" name="info_section_image">
                                 </div>
                             </div>

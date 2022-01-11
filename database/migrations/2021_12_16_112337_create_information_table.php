@@ -17,10 +17,10 @@ class CreateInformationTable extends Migration
             $table->id();
             $table->string('info_title')->nullable();
             $table->string('info_subtitle')->nullable();
-            $table->string('info_description')->nullable();
+            $table->text('info_description')->nullable();
             $table->string('info_section_title')->nullable();
             $table->string('info_section_subtitle')->nullable();
-            $table->string('info_section_descriotion')->nullable();
+            $table->text('info_section_descriotion')->nullable();
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();
             $table->string('twitter')->nullable();
