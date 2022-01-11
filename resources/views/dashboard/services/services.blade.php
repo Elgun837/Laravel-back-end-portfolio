@@ -41,8 +41,8 @@
                     <div class="row">
                         <div class="col-md-12">Services 1
                             <div class="form-group">
-                                    <img src="{{ asset($service->service_image)}}" width="250px" alt="">
-                                    <input class="form-control-file border" type="file" multiple="false" name="service_image" src="{{ asset($service->service_image)}}">
+                                    <img id="service-image" src="{{ asset($service->service_image)}}" width="250px" alt="">
+                                    <input id="file-input" class="form-control-file border" type="file" multiple="false" name="service_image" src="{{ asset($service->service_image)}}">
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -74,5 +74,14 @@
     </div>
    
     @endforeach
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#file-input").change(function(){
+                let img = URL.createObjectURL(event.target.files[0]);
+                $('#service-image').attr('src', img);
+            });
+        });
+        </script>
     </div>
 @endsection()

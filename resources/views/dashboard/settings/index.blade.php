@@ -29,22 +29,22 @@
                         <div class="form-group">
 
                             <div class="admin-img-box">
-                                <img src="{{ asset($settings->logo) }}"  width="125px" alt="logo">
+                                <img id="setting-image" src="{{ asset($settings->logo) }}"  width="125px" alt="logo">
                             </div>
 
                             <p>
                                 Logo (125x42)
-                            <input class="form-control-file border" type="file" multiple="false" name="logo" accept="image/*" id=finput onchange="upload()">
+                            <input id="file-input" class="form-control-file border" type="file" multiple="false" name="logo" accept="image/*" id=finput onchange="upload()">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <div class="admin-img-box">
-                                <img src="{{asset($settings->favicon)}}" width="125px"  alt="logo">
+                                <img id="setting-image" src="{{asset($settings->favicon)}}" width="125px"  alt="logo">
                             </div>
                             <p>
                             Favicon
-                            <input class="form-control-file border" type="file" multiple="false" name="favicon" accept="image/*" id=favinput onchange="upload_2()">
+                            <input id="file-input" class="form-control-file border" type="file" multiple="false" name="favicon" accept="image/*" id=favinput onchange="upload_2()">
                         </div>
                     </div>
                 </div>
@@ -90,5 +90,13 @@
 
     </div>
 
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#file-input").change(function(){
+                let img = URL.createObjectURL(event.target.files[0]);
+                $('#setting-image').attr('src', img);
+            });
+        });
+        </script>
 @endsection()

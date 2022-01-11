@@ -30,8 +30,8 @@
                         </div>
                         <div class="col-md-12">About  image
                             <div class="form-group">
-                            <img src="{{asset($abouts->about_image)}}" alt="about_image" width="500px">
-                                <input class="form-control-file border" type="file" src="{{asset($abouts->about_image)}}" multiple="false" name="about_image" accept="image/*">
+                            <img id="about-image" src="{{asset($abouts->about_image)}}" alt="about_image" width="500px">
+                                <input id="file-input" class="form-control-file border" type="file" src="{{asset($abouts->about_image)}}" multiple="false" name="about_image" accept="image/*">
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -69,5 +69,13 @@
    
 
     </div>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#file-input").change(function(){
+                let img = URL.createObjectURL(event.target.files[0]);
+                $('#about-image').attr('src', img);
+            });
+        });
+        </script>
 @endsection()

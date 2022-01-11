@@ -38,10 +38,10 @@
                             <div class="form-group">
 
                             <div class="slider-img-box">
-                                <img src="{{ asset($slide->slide_image)}}"  width="400px" alt="slide_image">
+                                <img id="slider-image" src="{{ asset($slide->slide_image)}}"  width="400px" alt="slide_image">
                             </div>
                                     
-                                    <input class="form-control-file border" type="file" src="{{ asset($slide->slide_image)}}" multiple="false" name="slide_image">
+                                    <input id="file-input" class="form-control-file border" type="file" src="{{ asset($slide->slide_image)}}" multiple="false" name="slide_image">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -95,6 +95,14 @@
             </div>
         </div>
 @endforeach()
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#file-input").change(function(){
+                let img = URL.createObjectURL(event.target.files[0]);
+                $('#slider-image').attr('src', img);
+            });
+        });
+        </script>
  
 @endsection()

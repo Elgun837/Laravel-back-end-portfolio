@@ -66,11 +66,11 @@
                         <div class="col-md-12">Member
                             <div class="form-group">
 
-                                <canvas id= "canv1" ></canvas>
+                                <img id="team-image" src="" width="200px">
 
                                 <p>
                                     Photo
-                                    <input class="form-control-file border" type="file" multiple="false" name="team_member_image" accept="image/*">
+                                    <input id="file-input" class="form-control-file border" type="file" multiple="false" name="team_member_image" accept="image/*">
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -106,6 +106,14 @@
 
     </div>
 
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#file-input").change(function(){
+                let img = URL.createObjectURL(event.target.files[0]);
+                $('#team-image').attr('src', img);
+            });
+        });
+        </script>
 
 @endsection()
