@@ -20,11 +20,11 @@ Alternative installation is possible without local dependencies relying on [Dock
 
 Clone the repository
 
-    git clone https://github.com/Elgun837/my-pro.git
+    git clone https://github.com/Elgun837/Laravel-back-end-portfolio.git
 
 Switch to the repo folder
 
-    cd laravel-realworld-example-app
+    cd Laravel-back-end-portfolio
 
 Install all the dependencies using composer
 
@@ -55,7 +55,7 @@ You can now access the server at http://localhost:8000
 **TL;DR command list**
 
     git clone git@github.com:gothinkster/laravel-realworld-example-app.git
-    cd laravel-realworld-example-app
+    cd Laravel-back-end-portfolio
     composer install
     cp .env.example .env
     php artisan key:generate
